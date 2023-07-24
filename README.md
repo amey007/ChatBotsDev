@@ -6,3 +6,5 @@
 - Setup Virtual Env for Python Development
 - Secure the important parameters in the env file
 - Setup VCS
+- Setup GUI using Streamlit for the Application
+- Create CSV agent using LangChain and use it to Query the custom csv data
