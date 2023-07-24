@@ -1,6 +1,7 @@
 import streamlit as st
 from langchain.agents import create_csv_agent
 from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
 from dotenv import load_dotenv
 from tempfile import NamedTemporaryFile
 
@@ -22,7 +23,8 @@ def main():
         
         user_question = st.text_input("Ask a question about your document: ")
 
-        llm = OpenAI(temperature=0)
+        # llm = OpenAI(temperature=0)
+        llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613")
         agent = create_csv_agent(llm, f.name, verbose=True)
 
         if user_question is not None and user_question.strip() != "":
